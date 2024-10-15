@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Alert System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        .alert {
+            background-color: #ffcc00;
+            padding: 20px;
+            border: 1px solid #ff9900;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .alert h2 {
+            margin: 0;
+        }
+        .report-form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .report-form input, .report-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .report-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .report-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Flood Alert System</h1>
+
+<div class="alert">
+    <h2>Alert: Heavy Rainfall Detected!</h2>
+    <p>Rainfall has crossed the threshold of 100 mm. Please stay safe and take necessary precautions!</p>
+</div>
+
+<div class="report-form">
+    <h2>Submit Your Report</h2>
+    <form id="reportForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Report..." required></textarea>
+        <button type="submit">Submit Report</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('reportForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Your report has been submitted successfully!');
+        // Here you can add code to send the report data to your server
+        this.reset(); // Reset the form after submission
+    });
+</script>
+
+</body>
+</html>
